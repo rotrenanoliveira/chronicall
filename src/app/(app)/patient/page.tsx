@@ -2,6 +2,7 @@ import { getPatientFromCookie } from '@/app/server/data/get-patient-from-cookies
 import { SidebarInset, SidebarTrigger } from '@/components/ui/sidebar'
 import { redirect } from 'next/navigation'
 import { Separator } from '@/components/ui/separator'
+import { PatientWeight } from './_components/patient-weight'
 
 export default async function PatientPage() {
   const patient = await getPatientFromCookie()
@@ -21,7 +22,7 @@ export default async function PatientPage() {
       </header>
       <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
         <div className="grid auto-rows-min gap-4 md:grid-cols-3">
-          <div className="aspect-video rounded-xl bg-muted/50" />
+          <PatientWeight />
           <div className="aspect-video rounded-xl bg-muted/50" />
           <div className="aspect-video rounded-xl bg-muted/50" />
         </div>

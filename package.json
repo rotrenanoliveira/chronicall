@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@faker-js/faker": "9.1.0",
     "@radix-ui/react-avatar": "1.1.1",
     "@radix-ui/react-collapsible": "1.1.1",
     "@radix-ui/react-dialog": "1.1.2",
@@ -30,7 +31,9 @@
     "next-themes": "0.3.0",
     "react": "19.0.0-rc-65a56d0e-20241020",
     "react-dom": "19.0.0-rc-65a56d0e-20241020",
+    "react-is": "19.0.0-rc-6f23540c7d-20240528",
     "react-phone-number-input": "3.4.9",
+    "recharts": "2.13.2",
     "sonner": "1.5.0",
     "tailwind-merge": "2.5.4",
     "tailwindcss-animate": "1.0.7",
@@ -46,6 +49,11 @@
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
+  },
+  "pnpm": {
+    "overrides": {
+      "recharts>react-is": "$react-is"
+    }
   },
   "packageManager": "pnpm@9.12.2+sha512.22721b3a11f81661ae1ec68ce1a7b879425a1ca5b991c975b074ac220b187ce56c708fe5db69f4c962c989452eee76c82877f4ee80f474cebd61ee13461b6228"
 }
