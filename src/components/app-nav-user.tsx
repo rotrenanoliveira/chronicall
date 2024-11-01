@@ -1,4 +1,4 @@
-import { getPatientFromCookie } from '@/app/server/data/get-patient-from-cookies'
+import { getPatientFromCookie } from '@/server/data/get-patient-from-cookies'
 import { SidebarMenu, SidebarMenuButton, SidebarMenuItem } from '@/components/ui/sidebar'
 import { DropdownMenu, DropdownMenuTrigger } from '@/components/ui/dropdown-menu'
 import Avatar from 'boring-avatars'

@@ -3,7 +3,7 @@ import { CartesianGrid, Line, LineChart, XAxis } from 'recharts'
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { type ChartConfig, ChartContainer, ChartTooltip, ChartTooltipContent } from '@/components/ui/chart'
-import { generatePatientWeight } from '@/app/server/data/generate-patient-weight'
+import { generatePatientWeight } from '@/server/data/generate-patient-weight'
 
 export const description = 'A linear area chart'
 

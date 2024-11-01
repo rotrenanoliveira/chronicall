@@ -1,4 +1,4 @@
-import { getPatientFromCookie } from '@/app/server/data/get-patient-from-cookies'
+import { getPatientFromCookie } from '@/server/data/get-patient-from-cookies'
 import { SidebarInset, SidebarTrigger } from '@/components/ui/sidebar'
 import { redirect } from 'next/navigation'
 import { Separator } from '@/components/ui/separator'

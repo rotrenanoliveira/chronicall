@@ -13,7 +13,7 @@ import { Mail, ArrowRightIcon } from 'lucide-react'
 import { InputPhone } from './_components/input-phone'
 import Link from 'next/link'
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
-import { signUpAction } from '@/app/server/actions/sign-up'
+import { signUpAction } from '@/server/actions/sign-up'
 
 const rethink = Rethink_Sans({ subsets: ['latin'] })
 
@@ -25,7 +25,7 @@ export default async function SignUpPage(props: { searchParams: SearchParams }) 
 
   const userId = (await cookies()).get('sign-up:user')
 
-  if (userId) {
+  if (userId && !step) {
     redirect('/patient')
   }
 

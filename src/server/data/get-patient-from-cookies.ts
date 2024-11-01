@@ -1,6 +1,6 @@
 'use server'
 
-import type { User } from '@/app/utils/types'
+import type { User } from '@/utils/types'
 import { cookies } from 'next/headers'
 
 export async function getPatientFromCookie() {
