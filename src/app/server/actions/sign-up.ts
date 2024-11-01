@@ -23,12 +23,12 @@ export async function signUpAction(data: FormData) {
 
   cookieStore.set('sign-up:user', userId, {
     path: '/',
-    maxAge: 60 * 60 * 30, // 30 minutes
+    maxAge: 60 * 60 * 24 * 1, // 1 day
   })
 
   cookieStore.set('chronicall:user', JSON.stringify(userData), {
     path: '/',
-    maxAge: 60 * 60 * 30, // 30 minutes
+    maxAge: 60 * 60 * 24 * 1, // 1 day
   })
 
   redirect('/sign-up?step=2')
