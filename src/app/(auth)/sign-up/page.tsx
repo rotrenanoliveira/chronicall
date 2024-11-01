@@ -25,6 +25,10 @@ export default async function SignUpPage(props: { searchParams: SearchParams }) 
 
   const userId = (await cookies()).get('sign-up:user')
 
+  if (userId) {
+    redirect('/patient')
+  }
+
   if (!userId && !step) {
     redirect('?step=1')
   }
