@@ -20,3 +20,11 @@ export type GlucoseMeasurement = {
   fasting: number
   postMeal: number
 }
+
+export type HypertensionCondition = 'normal' | 'elevated' | 'stage1' | 'stage2' | 'crisis'
+
+export type HypertensionMeasurement = {
+  day: Date
+  systolic: number
+  diastolic: number
+}
