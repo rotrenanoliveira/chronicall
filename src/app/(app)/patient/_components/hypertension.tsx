@@ -1,4 +1,3 @@
-import React from 'react'
 import { HypertensionMeasures } from './hypertension-measures'
 import type { HypertensionCondition } from '@/utils/types'
 import { faker } from '@faker-js/faker'
@@ -31,9 +30,9 @@ export function Hypertension() {
   const conditionDescription = getConditionDescription(condition)
 
   return (
-    <React.Fragment>
+    <div className="flex flex-col gap-4 col-span-2 lg:col-span-2 lg:flex-row">
       <HypertensionMeasures condition={condition} description={conditionDescription} />
       <HeartRate />
-    </React.Fragment>
+    </div>
   )
 }

@@ -9,7 +9,7 @@ const chartConfig = { heartRate: { label: 'batimentos', color: 'hsl(var(--chart-
 
 export function HeartRate() {
   return (
-    <Card className="shadow-none">
+    <Card className="shadow-none w-full">
       <CardHeader>
         <CardTitle>Frequência cardíaca</CardTitle>
         <CardDescription className="font-light">

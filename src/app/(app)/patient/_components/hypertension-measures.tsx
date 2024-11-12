@@ -19,7 +19,7 @@ interface HypertensionMeasuresProps {
 
 export function HypertensionMeasures({ condition, description }: HypertensionMeasuresProps) {
   return (
-    <Card className="shadow-none max-h-64">
+    <Card className="shadow-none xl:max-h-64 w-full">
       <CardHeader>
         <CardTitle>Pressão arterial</CardTitle>
         <CardDescription>

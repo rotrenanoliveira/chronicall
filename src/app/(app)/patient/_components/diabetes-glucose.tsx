@@ -20,7 +20,7 @@ interface DiabetesGlucoseProps {
 
 export function DiabetesGlucose({ condition, description }: DiabetesGlucoseProps) {
   return (
-    <Card className="shadow-none">
+    <Card className="shadow-none w-full">
       <CardHeader>
         <CardTitle>Glicose</CardTitle>
         <CardDescription className="font-light">

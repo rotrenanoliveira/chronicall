@@ -19,7 +19,7 @@ interface DiabetesHemoglobinProps {
 
 export function DiabetesHemoglobin({ condition, description }: DiabetesHemoglobinProps) {
   return (
-    <Card className="shadow-none">
+    <Card className="shadow-none w-full">
       <CardHeader>
         <CardTitle>Hemoglobina aplicada</CardTitle>
         <CardDescription className="font-light">
