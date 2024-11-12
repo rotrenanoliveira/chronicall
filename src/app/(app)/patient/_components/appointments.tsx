@@ -129,23 +129,22 @@ const hours = ['6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17
 const minutes = ['00', '15', '30', '45']
 
 export function Appointments() {
-  const appointments = faker.helpers.arrayElements(data, 5).map((appointment) => ({
-    ...appointment,
-    date: faker.date.soon({ days: 90 }).toLocaleDateString('pt-BR', { dateStyle: 'long' }),
-    time: `${faker.helpers.arrayElement(hours)}:${faker.helpers.arrayElement(minutes)} hrs`,
-    notes: appointment.notes.length > 40 ? appointment.notes.substring(0, 40).concat('...') : appointment.notes,
-    doctorName:
-      appointment.doctorName.length > 15
-        ? appointment.doctorName.substring(0, 12).concat('...')
-        : appointment.doctorName,
-  }))
+  const appointments = faker.helpers
+    .arrayElements(data, 10)
+    .map((appointment) => ({
+      ...appointment,
+      date: faker.date.soon({ days: 180 }),
+      time: `${faker.helpers.arrayElement(hours)}:${faker.helpers.arrayElement(minutes)} hrs`,
+      notes: appointment.notes.length > 40 ? appointment.notes.substring(0, 40).concat('...') : appointment.notes,
+    }))
+    .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
 
   return (
     <div className="space-y-2">
       {appointments.map((appointment) => {
         return (
           <div
-            key={appointment.date}
+            key={appointment.specialty}
             className="flex items-center gap-2 border rounded-lg p-2 group hover:bg-muted/50 hover:cursor-pointer"
           >
             <div className="size-10 flex items-center justify-center rounded-3xl bg-primary/10 p-2">
@@ -153,18 +152,24 @@ export function Appointments() {
             </div>
 
             <div className="flex-1 space-y-1">
-              <div className="flex flex-col">
-                <span className="text-md text-foreground">
-                  {appointment.specialty} - {appointment.doctorName}
-                </span>
-                <span className="text-sm text-muted-foreground">{appointment.location}</span>
+              <div className="flex flex-1 flex-col lg:flex-row items-start lg:items-center justify-between lg:gap-2">
+                <div className="flex flex-col lg:gap-1">
+                  <span className="text-md text-foreground">{appointment.specialty}</span>
+
+                  <div className="flex flex-col md:inline-flex md:flex-row md:items-center md:gap-1 lg:gap-2">
+                    <span className="text-sm text-foreground">{appointment.doctorName}</span>
+                    <span className="hidden md:inline"> - </span>
+                    <span className="text-sm font-light text-muted-foreground">{appointment.location}</span>
+                  </div>
+                </div>
+
                 <span className="text-sm font-light text-muted-foreground">
-                  {appointment.date} às {appointment.time}
+                  {appointment.date.toLocaleDateString('pt-BR', { dateStyle: 'long' })} às {appointment.time}
                 </span>
               </div>
             </div>
 
-            <div className="self-end size-10 flex items-center justify-center rounded-3xl border hover:bg-primary/10 p-2 transition-colors group-hover:bg-primary/20">
+            <div className="hidden md:flex size-10 items-center justify-center rounded-3xl border hover:bg-primary/10 p-2 transition-colors group-hover:bg-primary/20">
               <ArrowUpRightIcon
                 strokeWidth={1}
                 className="size-8 text-primary rotate-45 group-hover:rotate-0 transition-transform"
