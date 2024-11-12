@@ -35,6 +35,7 @@ export function Medications() {
 
   return (
     <div className="flex flex-col gap-2">
+      <h3>Medicações</h3>
       {medications.map((medication) => {
         return (
           <div

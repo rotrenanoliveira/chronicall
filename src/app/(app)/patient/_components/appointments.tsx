@@ -141,6 +141,7 @@ export function Appointments() {
 
   return (
     <div className="space-y-2">
+      <h3>Próximas consultas</h3>
       {appointments.map((appointment) => {
         return (
           <div
