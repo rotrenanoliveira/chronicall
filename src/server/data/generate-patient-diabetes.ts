@@ -52,15 +52,15 @@ function genHemoglobin(condition: DiabetesCondition) {
 }
 
 export function generatePatientGlucose(condition: DiabetesCondition) {
-  const dates: number[] = []
+  const dates: Date[] = []
 
   for (let i = 0; i < 7; i++) {
     const date = new Date()
     date.setDate(date.getDate() - i)
-    dates.push(date.getDate())
+    dates.push(date)
   }
 
-  dates.sort((a, b) => a - b)
+  dates.sort((a, b) => a.getTime() - b.getTime())
 
   const measurements: GlucoseMeasurement[] = dates.map((day) => ({
     day,

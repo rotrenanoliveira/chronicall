@@ -16,7 +16,7 @@ export type Appointment = {
 export type DiabetesCondition = 'normal' | 'pre' | 'diabetes'
 
 export type GlucoseMeasurement = {
-  day: number
+  day: Date
   fasting: number
   postMeal: number
 }

@@ -30,9 +30,15 @@ export function DiabetesGlucose({ condition, description }: DiabetesGlucoseProps
       </CardHeader>
       <CardContent className="h-">
         <ChartContainer config={chartConfig} className="max-h-32 w-full">
-          <LineChart accessibilityLayer data={generatePatientGlucose(condition)} margin={{ left: 12, right: 12 }}>
+          <LineChart accessibilityLayer data={generatePatientGlucose(condition)} margin={{ left: 15, right: 12 }}>
             <CartesianGrid vertical={false} />
-            <XAxis dataKey="day" tickLine={false} axisLine={false} tickMargin={8} />
+            <XAxis
+              dataKey="day"
+              tickLine={false}
+              axisLine={false}
+              tickMargin={8}
+              tickFormatter={(value) => new Date(value).toLocaleDateString('pt-BR', { weekday: 'short' })}
+            />
             <ChartTooltip cursor={false} content={<ChartTooltipContent />} />
             <Line dataKey="postMeal" type="monotone" stroke="var(--color-postMeal)" strokeWidth={2} dot={true} />
             <Line dataKey="fasting" type="monotone" stroke="var(--color-fasting)" strokeWidth={2} dot={true} />
