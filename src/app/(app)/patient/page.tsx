@@ -3,8 +3,8 @@ import { SidebarInset, SidebarTrigger } from '@/components/ui/sidebar'
 import { redirect } from 'next/navigation'
 import { Separator } from '@/components/ui/separator'
 import { Calendar } from './_components/calendar'
-import { PatientWeight } from './_components/patient-weight'
 import { Appointments } from './_components/appointments'
+import { Diabetes } from './_components/diabetes'
 
 export default async function PatientPage() {
   const patient = await getPatientFromCookie()
@@ -24,8 +24,9 @@ export default async function PatientPage() {
       </header>
       <div className="flex flex-1 flex-col md:flex-row gap-4 p-4 pt-0">
         <div className="flex-1 grid md:grid-cols-2 auto-rows-min gap-4 rounded-xl">
-          <PatientWeight />
-          <PatientWeight />
+          <Diabetes />
+
+          <div className="h-screen rounded-lg bg-muted/50 col-span-2" />
         </div>
 
         <div className="w-96 aspect-square rounded-xlm space-y-4">

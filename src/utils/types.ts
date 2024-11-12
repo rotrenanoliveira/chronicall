@@ -12,3 +12,11 @@ export type Appointment = {
   location: string
   notes: string
 }
+
+export type DiabetesCondition = 'normal' | 'pre' | 'diabetes'
+
+export type GlucoseMeasurement = {
+  day: number
+  fasting: number
+  postMeal: number
+}
