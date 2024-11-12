@@ -43,7 +43,7 @@ export default async function SignUpPage(props: { searchParams: SearchParams }) 
       {/* personal information form*/}
       {step === '1' && (
         <React.Fragment>
-          <form action={signUpAction} className="w-96 space-y-4 flex flex-col items-center justify-center">
+          <form action={signUpAction} className="w-96 p-4 space-y-4 flex flex-col items-center justify-center">
             <h3 className="text-xl">Cadastro de Paciente</h3>
             <p className="text-foreground/65 leading-5 text-sm">
               Preencha seus dados para garantir um atendimento personalizado e eficiente.
