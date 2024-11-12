@@ -4,13 +4,13 @@ import { redirect } from 'next/navigation'
 import { Separator } from '@/components/ui/separator'
 import { Calendar } from './_components/calendar'
 import { Appointments } from './_components/appointments'
-import { faker } from '@faker-js/faker'
 import { Hypertension } from './_components/hypertension'
 import { Diabetes } from './_components/diabetes'
+import { Medications } from './_components/medications'
 
 export default async function PatientPage() {
   const patient = await getPatientFromCookie()
-  const disease = faker.helpers.arrayElement(['diabetes', 'hypertension'])
+  const disease = ['diabetes', 'hypertension'][Math.floor(Math.random() * 2)]
 
   if (!patient) redirect('/sign-up')
 
@@ -38,6 +38,8 @@ export default async function PatientPage() {
         <div className="w-96 aspect-square rounded-xlm space-y-4">
           {/* calendar */}
           <Calendar />
+          {/* medications */}
+          <Medications />
         </div>
       </div>
     </SidebarInset>

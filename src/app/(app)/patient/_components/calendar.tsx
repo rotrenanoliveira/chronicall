@@ -16,7 +16,6 @@ type CalendarWeeks = CalendarWeek[]
 
 export function Calendar() {
   const weekDays = getWeekDays({ short: true })
-  console.log(weekDays)
 
   const [currentDate, setCurrentDate] = useState(() => {
     return dayjs().set('date', 1)
@@ -79,7 +78,7 @@ export function Calendar() {
   }, [currentDate])
 
   return (
-    <div className="w-full bg-muted/50 rounded-lg p-4">
+    <div className="w-full border rounded-lg p-4">
       <table className="w-full border-spacing-1 table-fixed">
         <thead>
           <tr>
@@ -99,6 +98,7 @@ export function Calendar() {
               <tr key={week} className="">
                 {days.map(({ date }) => {
                   const isToday = dayjs().isSame(date, 'day')
+                  const alreadyPassed = dayjs().isAfter(date, 'day')
 
                   return (
                     <td className="box-border w-full" key={date.toString()}>
@@ -106,6 +106,7 @@ export function Calendar() {
                         className={cn(
                           'leading-3 text-center aspect-square w-full flex items-center justify-center rounded-md',
                           isToday && 'bg-primary/10 text-primary',
+                          alreadyPassed && 'text-muted-foreground',
                         )}
                       >
                         {date.format('D')}
