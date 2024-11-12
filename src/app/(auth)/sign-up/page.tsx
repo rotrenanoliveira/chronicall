@@ -227,7 +227,7 @@ export default async function SignUpPage(props: { searchParams: SearchParams }) 
               <Label htmlFor="user-contact-name">
                 Nome do contato <span className="text-destructive">*</span>
               </Label>
-              <Input type="text" id="user-contact-name" placeholder="insira seu nome completo" required />
+              <Input type="text" id="user-contact-name" placeholder="insira o nome completo do contato" required />
             </div>
 
             {/* input phone */}
