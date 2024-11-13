@@ -1,3 +1,4 @@
+import { Badge } from '@/components/ui/badge'
 import { cn } from '@/lib/utils'
 import { faker } from '@faker-js/faker'
 import { ActivityIcon } from 'lucide-react'
@@ -137,14 +138,17 @@ export function PatientsMonitor() {
               />
             </div>
 
-            <div>
-              <p className="text-sm text-foreground">
-                <span className="font-medium">Paciente: </span> {patient.patientName}
-              </p>
-              <p className="text-sm text-foreground">
-                {patient.condition} - {patient.healthStatus}
-              </p>
+            <div className="w-full space-y-0.5">
+              <div className="text-sm text-foreground w-full flex items-center justify-between">
+                <p>
+                  <span className="font-medium">Paciente: </span> {patient.patientName}
+                </p>
+                <Badge variant="outline" className="rounded-xl font-normal">
+                  {patient.healthStatus}
+                </Badge>
+              </div>
 
+              <p className="text-sm text-foreground">{patient.condition}</p>
               <p className="text-sm font-light text-muted-foreground text-nowrap">{patient.notes}</p>
             </div>
           </div>
