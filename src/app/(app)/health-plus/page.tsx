@@ -3,6 +3,7 @@ import { SidebarInset, SidebarTrigger } from '@/components/ui/sidebar'
 import { redirect } from 'next/navigation'
 import { Separator } from '@/components/ui/separator'
 import { Appointments } from './_components/appointments'
+import { PatientsMonitor } from './_components/patients-monitor'
 
 export default async function PatientPage() {
   const user = await getPatientFromCookie()
@@ -30,7 +31,10 @@ export default async function PatientPage() {
           </div>
         </div>
 
-        <div className="w-96 aspect-square rounded-xlm space-y-4 h-full rounded-lg border" />
+        <div className="w-96 aspect-square rounded-xlm space-y-4">
+          {/* patients monitor */}
+          <PatientsMonitor />
+        </div>
       </div>
     </SidebarInset>
   )
