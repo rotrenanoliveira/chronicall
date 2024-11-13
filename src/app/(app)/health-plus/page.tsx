@@ -2,6 +2,7 @@ import { getPatientFromCookie } from '@/server/data/get-patient-from-cookies'
 import { SidebarInset, SidebarTrigger } from '@/components/ui/sidebar'
 import { redirect } from 'next/navigation'
 import { Separator } from '@/components/ui/separator'
+import { Appointments } from './_components/appointments'
 
 export default async function PatientPage() {
   const user = await getPatientFromCookie()
@@ -24,7 +25,9 @@ export default async function PatientPage() {
       </header>
       <div className="flex flex-1 flex-col xl:flex-row gap-4 p-4 pt-0">
         <div className="flex-1 grid xl:grid-cols-2 auto-rows-min gap-4 rounded-xl">
-          <div className="h-fit rounded-lg col-span-2" />
+          <div className="h-fit rounded-lg col-span-2">
+            <Appointments />
+          </div>
         </div>
 
         <div className="w-96 aspect-square rounded-xlm space-y-4 h-full rounded-lg border" />
