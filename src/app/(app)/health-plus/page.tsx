@@ -4,6 +4,7 @@ import { redirect } from 'next/navigation'
 import { Separator } from '@/components/ui/separator'
 import { Appointments } from './_components/appointments'
 import { PatientsMonitor } from './_components/patients-monitor'
+import { Emergency } from './_components/emergency'
 
 export default async function PatientPage() {
   const user = await getPatientFromCookie()
@@ -34,6 +35,8 @@ export default async function PatientPage() {
         <div className="w-96 aspect-square rounded-xlm space-y-4">
           {/* patients monitor */}
           <PatientsMonitor />
+          {/* emergency */}
+          <Emergency />
         </div>
       </div>
     </SidebarInset>
